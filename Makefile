@@ -1,7 +1,7 @@
 all: test
 
 js:
-	browserify -o Script.js -t coffeeify -r ./src/Game.coffee:Game
+	browserify -o Script.js -t coffeeify -r ./src/SomeClass.coffee:SomeClass
 	coffee -bcp ./src/boot.coffee >> Script.js
 
 bridges: js

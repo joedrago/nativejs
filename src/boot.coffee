@@ -1,3 +1,5 @@
+SomeClass = require 'SomeClass'
+
 gGame = null
 
 log = (s) ->
@@ -7,6 +9,8 @@ log = (s) ->
 startup = (game) ->
   gGame = game
   log("startup")
+
+  derp = new SomeClass
 
 shutdown = ->
   log("shutdown")
