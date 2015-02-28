@@ -1,4 +1,5 @@
-rm -f bridge/*.class *.class
+browserify -o Script.js -t coffeeify -r ./src/SomeClass.coffee:SomeClass
+coffee -bcp ./src/boot.coffee >> Script.js
 javac bridge/Game.java bridge/BaseScript.java
 java -cp tools/js.jar:. org.mozilla.javascript.tools.jsc.Main -opt -1 -implements bridge.BaseScript -package bridge Script.js
 javac TestApp.java
@@ -7,6 +8,7 @@ java -cp tools/js.jar:. TestApp
 TestApp begin
 TestGame::log(): Native call to log
 TestGame::log(): startup
+TestGame::log(): SomeClass constructor
 TestGame::log(): update
 TestGame::log(): shutdown
 TestApp end
